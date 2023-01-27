@@ -84,7 +84,7 @@ class Task_set_types extends LIST_Controller
         
         if ($this->form_validation->run()) {
             $task_set_type = new Task_set_type();
-            $task_set_type->identifier = 'test';
+            $task_set_type->from_array($task_set_type_data, ['identifier']);
             $task_set_type->from_array($task_set_type_data, ['name']);
             
             $this->_transaction_isolation();
