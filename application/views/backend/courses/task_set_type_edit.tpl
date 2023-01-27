@@ -16,8 +16,8 @@
 {/block}
 {block custom_head}<script type="text/javascript">
     var current_course = {$course->id|default:0|intval};
-    var all_task_set_types = [];
-    {foreach $all_task_set_types as $type}
-        all_task_set_types.push('{$type->name}');
+    var identifiers = [];
+    {foreach $identifiers as $identifier}
+        identifiers.push('{$identifier|escape:'html'}');
     {/foreach}
 </script>{/block}

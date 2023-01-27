@@ -9,6 +9,7 @@ use Application\Interfaces\DataMapperExtensionsInterface;
  * @property string $updated date time format YYYY-MM-DD HH:MM:SS
  * @property string $created date time format YYYY-MM-DD HH:MM:SS
  * @property string $name
+ * @property string $identifier
  * @property Task_set $task_set
  * @property Course $course
  *

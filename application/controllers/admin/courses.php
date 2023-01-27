@@ -446,6 +446,23 @@ class Courses extends LIST_Controller
             redirect(create_internal_url('admin_courses/mail_to_course/' . $course_id));
         }
     }
+
+    private function get_task_set_types_identifiers($course_id, $task_set_type_id = null): array {
+        $identifiers = [];
+
+        $course = new Course();
+        $course->get_by_id($course_id);
+        $course
+            ->task_set_type
+            ->where(
+                array('task_set_types.identifier !=' => 'null', 'task_set_types.id !=' => strval($task_set_type_id))
+            )
+            ->get();
+        foreach ($course->task_set_type as $type) {
+            array_push($identifiers, $type->identifier);
+        }
+        return $identifiers;
+    }
     
     /** 
      * Renders a course task set types listing page, along with a form for adding a new task set type to the course, which includes a TinyMCE formula notation editor.
@@ -466,7 +483,7 @@ class Courses extends LIST_Controller
         $this->parser->add_css_file('admin_courses.css');
         $this->parser->parse('backend/courses/task_set_types.tpl', [
             'course' => $course,
-            'all_task_set_types' => $course->task_set_type->get()
+            'identifiers' => $this->get_task_set_types_identifiers($course_id)
         ]);
     }
 
@@ -500,7 +517,7 @@ class Courses extends LIST_Controller
         $this->parser->parse('backend/courses/task_set_type_edit.tpl', [
             'course' => $course, 
             'task_set_type' => $course->task_set_type,
-            'all_task_set_types' => $current_course->task_set_type,
+            'identifiers' => $this->get_task_set_types_identifiers($course_id, $task_set_type_id),
             'edit' => true
         ]);
     }
@@ -537,7 +554,7 @@ class Courses extends LIST_Controller
         $task_set_types = $course->task_set_type;
         $types = [];
         foreach($task_set_types->all as $type){
-            $types[$type->name] = $type->id;
+            $types[$type->identifier] = $type->id;
         }
         
         $container = ContainerFactory::getContainer();

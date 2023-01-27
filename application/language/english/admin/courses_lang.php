@@ -85,6 +85,7 @@ $lang['admin_courses_form_field_formula'] = 'formula';
 $lang['admin_courses_form_field_formula_object'] = 'formula';
 $lang['admin_courses_form_formula_build_failed'] = 'Formula contains a syntax error';
 $lang['admin_courses_table_header_task_set_type'] = 'Type of task set';
+$lang['admin_courses_table_header_identifiers'] = 'Identifier';
 $lang['admin_courses_table_header_upload_solution'] = 'Enable solution uploading';
 $lang['admin_courses_table_header_min_points'] = 'Min points';
 $lang['admin_courses_table_header_include_in_total'] = 'Include points in total';

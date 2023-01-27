@@ -66,11 +66,11 @@ jQuery(document).ready(function($) {
             });
 
             var menuItems = [];
-            all_task_set_types.forEach(type => {
+            identifiers.forEach(identifier => {
                 menuItems.push({
-                    text: type,
+                    text: identifier,
                     onclick: function () {
-                        editor.insertContent('~' + type.replaceAll(' ', '_'));
+                        editor.insertContent('~' + identifier.replaceAll(' ', '_'));
                     }
                 });
             });

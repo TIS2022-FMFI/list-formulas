@@ -85,6 +85,7 @@ $lang['admin_courses_form_field_formula_object'] = 'vzorec';
 $lang['admin_courses_form_task_set_type_button_add'] = 'Pridať';
 $lang['admin_courses_form_task_set_type_button_edit'] = 'Upraviť';
 $lang['admin_courses_table_header_task_set_type'] = 'Typ zostáv úloh';
+$lang['admin_courses_table_header_identifier'] = 'Identifikátor';
 $lang['admin_courses_table_header_upload_solution'] = 'Povoliť upload riešení';
 $lang['admin_courses_table_header_min_points'] = 'Min body';
 $lang['admin_courses_table_header_include_in_total'] = 'Započítavať body';

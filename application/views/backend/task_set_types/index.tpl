@@ -15,6 +15,7 @@
             <thead>
                 <th>ID</th>
                 <th>{translate line='admin_task_set_types_table_header_name'}</th>
+                <th>{translate line='admin_task_set_types_table_header_identifier'}</th>
                 <th>{translate line='admin_task_set_types_table_header_task_sets'}</th>
                 <th>{translate line='admin_task_set_types_table_header_courses'}</th>
                 <th class="controlls" colspan="2">{translate line='admin_task_set_types_table_header_controlls'}</th>

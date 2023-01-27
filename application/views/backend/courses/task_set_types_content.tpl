@@ -8,6 +8,11 @@
     <td>{$task_set_type->id|intval}</td>
     <td>{translate_text|escape:'html' text=$task_set_type->name}</td>
     <td>
+        {if $task_set_type->identifier != null}
+            {$task_set_type->identifier|escape:'html'}
+        {else}-{/if}
+    </td>
+    <td>
         {$no_yes_options[$task_set_type->join_upload_solution|intval]}
         <input type="hidden" value="{$task_set_type->id|intval}" name="task_set_type_id">
         <input type="hidden" value="{$course->id|intval}" name="course_id"></td>
